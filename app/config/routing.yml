@@ -1,0 +1,10 @@
+joli_blog:
+    resource: "@JoliBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+square:
+    pattern: /square/{number}
+    defaults: { _controller: JoliBlogBundle:Default:square }
+    requirements :
+        number: "^(\d+)$"

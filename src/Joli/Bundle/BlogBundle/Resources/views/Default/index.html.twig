@@ -1,0 +1,26 @@
+
+
+<hr/>
+<h1>All</h1>
+{% block body %}
+<ul>
+    <tr><td>Title</td><td>Body</td></tr>
+    {% set count = 0 %}
+        {% for item in pagination %}
+    
+        {% set color = 'red' %}
+    
+        {% if item.id is odd %}
+            {% set color = 'green' %}
+        {% endif %}
+    
+        <li style="color:{{ color }}">
+                   {{ item.title }}
+        </li>
+        {% endfor %}
+</ul>
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+
+{% endblock %}

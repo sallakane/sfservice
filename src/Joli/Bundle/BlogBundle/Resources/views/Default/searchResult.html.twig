@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if results|length > 0 %}
+    <ul>
+
+        {% for item in results %}
+
+            <li>
+                {{ item.title }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+        Aucun resultat pour cette recherche
+
+    {% endif %}    
+    
+{% endblock %}
